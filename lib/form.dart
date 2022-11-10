@@ -243,7 +243,14 @@ class _MyFormPageState extends State<MyFormPage> {
                                     Center(child: const Text('Informasi Data')),
                                     SizedBox(height: 20),
                                     Center(
-                                      child: Text('Nama: ' + _namaLengkap),
+                                      child: Container(
+                                        child: Column(
+                                          children: [
+                                            Text('Nama: ' + _namaLengkap),
+                                            Text('Umur: $umur'),
+                                          ],
+                                        )
+                                      ),
                                     ),
                                     // TODO: Munculkan informasi yang didapat dari form
                                     TextButton(
