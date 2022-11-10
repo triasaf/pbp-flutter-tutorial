@@ -212,53 +212,50 @@ class _MyFormPageState extends State<MyFormPage> {
                             },
                           ),
                         ),
-                        TextButton(
-                          child: const Text(
-                            "Simpan",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.blue),
-                          ),
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return Dialog(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    elevation: 15,
-                                    child: Container(
-                                      child: ListView(
-                                        padding: const EdgeInsets.only(
-                                            top: 20, bottom: 20),
-                                        shrinkWrap: true,
-                                        children: <Widget>[
-                                          Center(
-                                              child:
-                                                  const Text('Informasi Data')),
-                                          SizedBox(height: 20),
-                                          // TODO: Munculkan informasi yang didapat dari form
-                                          TextButton(
-                                            onPressed: () {
-                                              Navigator.pop(context);
-                                            },
-                                            child: Text('Kembali'),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                },
-                              );
-                            }
-                          },
-                        ),
                       ],
                     ),
+                  ),
+                  TextButton(
+                    child: const Text(
+                      "Simpan",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    ),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Dialog(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              elevation: 15,
+                              child: Container(
+                                child: ListView(
+                                  padding: const EdgeInsets.only(
+                                      top: 20, bottom: 20),
+                                  shrinkWrap: true,
+                                  children: <Widget>[
+                                    Center(child: const Text('Informasi Data')),
+                                    SizedBox(height: 20),
+                                    // TODO: Munculkan informasi yang didapat dari form
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Kembali'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      }
+                    },
                   ),
                 ],
               ),
