@@ -162,58 +162,59 @@ class _MyFormPageState extends State<MyFormPage> {
                             });
                           },
                         ),
-                        SwitchListTile(
-                          title: const Text('Practice Mode'),
-                          value: _nilaiSwitch,
-                          onChanged: (bool value) {
-                            setState(() {
-                              _nilaiSwitch = value;
-                            });
-                          },
-                          secondary: const Icon(Icons.run_circle_outlined),
-                        ),
-                        ListTile(
-                          leading: const Icon(Icons.co_present),
-                          title: Row(
-                            children: [
-                              Text('Umur: ${umur.round()}'),
-                            ],
-                          ),
-                          subtitle: Slider(
-                            value: umur,
-                            max: 100,
-                            divisions: 100,
-                            label: umur.round().toString(),
-                            onChanged: (double value) {
-                              setState(() {
-                                umur = value;
-                              });
-                            },
-                          ),
-                        ),
-                        ListTile(
-                          leading: const Icon(Icons.class_),
-                          title: const Text(
-                            'Kelas PBP',
-                          ),
-                          trailing: DropdownButton(
-                            value: kelasPBP,
-                            icon: const Icon(Icons.keyboard_arrow_down),
-                            items: listKelasPBP.map((String items) {
-                              return DropdownMenuItem(
-                                value: items,
-                                child: Text(items),
-                              );
-                            }).toList(),
-                            onChanged: (String? newValue) {
-                              setState(() {
-                                kelasPBP = newValue!;
-                              });
-                            },
-                          ),
-                        ),
                       ],
                     ),
+                  ),
+
+                  ListTile(
+                    leading: const Icon(Icons.co_present),
+                    title: Row(
+                      children: [
+                        Text('Umur: ${umur.round()}'),
+                      ],
+                    ),
+                    subtitle: Slider(
+                      value: umur,
+                      max: 100,
+                      divisions: 100,
+                      label: umur.round().toString(),
+                      onChanged: (double value) {
+                        setState(() {
+                          umur = value;
+                        });
+                      },
+                    ),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.class_),
+                    title: const Text(
+                      'Kelas PBP',
+                    ),
+                    trailing: DropdownButton(
+                      value: kelasPBP,
+                      icon: const Icon(Icons.keyboard_arrow_down),
+                      items: listKelasPBP.map((String items) {
+                        return DropdownMenuItem(
+                          value: items,
+                          child: Text(items),
+                        );
+                      }).toList(),
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          kelasPBP = newValue!;
+                        });
+                      },
+                    ),
+                  ),
+                  SwitchListTile(
+                    title: const Text('Practice Mode'),
+                    value: _nilaiSwitch,
+                    onChanged: (bool value) {
+                      setState(() {
+                        _nilaiSwitch = value;
+                      });
+                    },
+                    secondary: const Icon(Icons.run_circle_outlined),
                   ),
                   TextButton(
                     child: const Text(
@@ -241,6 +242,9 @@ class _MyFormPageState extends State<MyFormPage> {
                                   children: <Widget>[
                                     Center(child: const Text('Informasi Data')),
                                     SizedBox(height: 20),
+                                    Center(
+                                      child: Text('Nama: ' + _namaLengkap),
+                                    ),
                                     // TODO: Munculkan informasi yang didapat dari form
                                     TextButton(
                                       onPressed: () {
