@@ -1,5 +1,6 @@
 import 'package:pbpflutter2/main.dart';
 import 'package:flutter/material.dart';
+import 'package:pbpflutter2/page/to_do_page.dart';
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({super.key});
@@ -49,6 +50,16 @@ class _MyFormPageState extends State<MyFormPage> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => const MyFormPage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('To Do'),
+                onTap: () {
+                  // Route menu ke halaman to do
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ToDoPage()),
                   );
                 },
               ),
@@ -165,7 +176,6 @@ class _MyFormPageState extends State<MyFormPage> {
                       ],
                     ),
                   ),
-
                   ListTile(
                     leading: const Icon(Icons.co_present),
                     title: Row(
@@ -244,13 +254,12 @@ class _MyFormPageState extends State<MyFormPage> {
                                     SizedBox(height: 20),
                                     Center(
                                       child: Container(
-                                        child: Column(
-                                          children: [
-                                            Text('Nama: ' + _namaLengkap),
-                                            Text('Umur: $umur'),
-                                          ],
-                                        )
-                                      ),
+                                          child: Column(
+                                        children: [
+                                          Text('Nama: ' + _namaLengkap),
+                                          Text('Umur: $umur'),
+                                        ],
+                                      )),
                                     ),
                                     // TODO: Munculkan informasi yang didapat dari form
                                     TextButton(
